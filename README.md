@@ -2,10 +2,10 @@
 
 > **Important — read before using**
 >
-> This script automates capturing WPA/WPA2 handshakes and converting them for offline cracking with Hashcat. **Do not use this tool against networks you do not own or for which you do not have explicit authorization.** Unauthorized interception or access to network traffic is illegal in many jurisdictions. Use this script only for legitimate security testing (your own networks or lab environments) or with a signed authorization.
+> This script automates capturing WPA/WPA2 handshakes and converting them for offline cracking with Hashcat. **Do not use this tool against networks you do not own or for which you do not have explicit authorization.** Unauthorized interception or access to network traffic is illegal. Use this script only for legitimate security testing (your own networks or lab environments) or with a signed authorization.
 > 
 
-This Python script orchestrates wireless auditing tools (aircrack-ng suite, hcxpcapngtool, hashcat) to perform WPA/WPA2 handshake capture, conversion, and offline cracking. It provides a structured workflow with logging and automated steps for security assessments.
+This Python script orchestrates wireless auditing tools (**aircrack-ng** suite, **hcxpcapngtool**, **hashcat**) to perform WPA/WPA2 handshake capture, conversion, and offline cracking. It provides a structured workflow with logging and automated steps for security assessments:
 
 * Weak Wi‑Fi passwords remain a common risk.
 * Demonstrating handshake capture shows how attackers exploit them.
@@ -31,7 +31,7 @@ This Python script orchestrates wireless auditing tools (aircrack-ng suite, hcxp
 
 The script checks for these tools at start.
 
-### Installation
+### Installation (Ubuntu/Debian)
 
 ```bash
 sudo apt update
@@ -44,14 +44,14 @@ Root privileges are required.
 
 ### Usage
 
-1. Check dependencies.
-2. Switch interface to monitor mode.
-3. Scan and choose target.
-4. Capture traffic for chosen BSSID/channel.
-5. Optionally deauth clients to force handshake.
-6. Verify handshake presence.
-7. Convert to `.hc22000` and run Hashcat with wordlist.
-8. Restore interface to managed mode.
+* Check dependencies.
+* Switch interface to monitor mode.
+* Scan and choose target.
+* Capture traffic for chosen BSSID/channel.
+* Optionally deauth clients to force handshake.
+* Verify handshake presence.
+* Convert to `.hc22000` and run Hashcat with wordlist.
+* Restore interface to managed mode.
 
 For safer, passive use:
 
