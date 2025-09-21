@@ -35,16 +35,14 @@ The script checks for these tools at start.
 
 ```bash
 sudo apt update
-sudo apt install -y  aircrack-ng hashcat
+sudo apt install -y aircrack-ng hashcat
 # For hcxpcapngtool:
 # git clone https://github.com/ZerBea/hcxtools.git && cd hcxtools && make && sudo make install
 ```
 
 Root privileges are required.
 
-## Usage
-
-Workflow:
+### Usage
 
 1. Check dependencies.
 2. Switch interface to monitor mode.
@@ -55,51 +53,16 @@ Workflow:
 7. Convert to `.hc22000` and run Hashcat with wordlist.
 8. Restore interface to managed mode.
 
-## Defensive / Capture‑Only Mode
-
 For safer, passive use:
 
 * Capture traffic only.
 * Skip deauth and cracking.
 * Convert for analysis or validation.
 
-## Files produced
-
-* `log.txt`
-* `capture-01.cap` / `capture-01.csv`
-* `capture.hc22000`
-
-## Logging and Output
-
 Actions and results are written to `log.txt` with timestamps.
 
-## Troubleshooting & Notes
-
-* Ensure tools are installed and in `PATH`.
-* Run with `sudo` if permissions fail.
-* Network services may need manual restart.
-* No handshake? Allow more time or ensure client activity.
-* Hashcat may need driver support.
-
-## Improvements & Contributions
-
-Ideas:
-
-* Add non‑interactive CLI flags.
-* Implement `--capture-only` mode.
-* Improve CSV parsing.
-* Enhance logging format.
-
-## Changelog
-
-* **2025-09-21** — Simplified README; added concise “Why this matters” section.
-
-## Safety, Legal & Ethical Notes
+### Safety, legal & ethical notes
 
 * Only audit authorized networks.
 * Deauth attacks disrupt clients; use carefully.
 * Keep proof of authorization when testing.
-
----
-
-*Last updated: `2025-09-21`*
